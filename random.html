@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Random Number </title>
+    </head>
+    <body>
+        <button id="button">Generate Random number</button>
+        <h2 id="output"> Random Number - <span id="number">0</span></h2>
+    </body>
+    <script>
+        var numberHandle = document.getElementById('number');
+        var buttonHandle = document.getElementById('button');
+        buttonHandle.addEventListener('click',function(){
+            var value = 0;
+            value = parseInt(Math.random()*100);
+            numberHandle.innerText = value;
+        },false);
+    </script>
+</html>

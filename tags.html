@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tags</title>
+    </head>
+    <body>
+            <label> Enter Text </label>
+            <input type="text" id="text" /> <br/> 
+            <select id = "option"> 
+                <option value=""> Select Tag </option>
+                <option value="h1"> h1 </option>
+                <option value="h2"> h2 </option>
+                <option value="p"> p </option>
+                <option value="b"> b </option>
+                <option value="em"> em </option>
+            </select>
+            <button id="button"> Generate </button> 
+            <div id="output">
+            </div>
+            <script>
+                var outputHandle = document.getElementById('output');
+                var o = document.getElementById('option');
+                var buttonHandle = document.getElementById('button');
+                
+                buttonHandle.addEventListener('click',function(){
+                    var input = document.getElementById('text').value;
+                    if(input == '') {
+                        alert('No text Entered');
+                    }
+                    else {
+                        var tag= document.createElement(o.options[o.selectedIndex].value);
+                       
+                        var text = document.createTextNode(input);
+                        tag.appendChild(text);
+                        outputHandle.appendChild(tag);
+                        console.log(outputHandle);
+                    }
+                    
+                },false);
+              
+                
+            </script>
+    </body>
+</html>

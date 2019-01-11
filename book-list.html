@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BookList</title>
+    </head>
+    <body>
+        	<div id="app">
+                    <h2> My Book List </h2>
+                    <ul id ="lists">
+                    
+                    </ul>
+            </div>
+            <script>
+                var books = [
+                    {
+                        title: 'The Design of EveryDay Things',
+                        author: 'Don Norman',
+                        alreadyRead: false
+                    }, {
+                        title: 'The Most Human Human',
+                        author: 'Brian Christian',
+                        alreadyRead: true
+                        }
+                    ];
+                    var appHandle = document.getElementById('app');
+                    var listHandle = document.getElementById('lists');
+                    books.forEach((book) =>{
+                        var liTag = document.createElement('li');
+                        var element = `Title : ${book.title} -> Author : ${book.author}`;
+                        var element = document.createTextNode(element);
+                        //var title = document.createTextNode(element);
+                        var title = document.createTextNode(book.title);
+                        var author = document.createTextNode(book.author);
+                        var italicTag = document.createElement('i');
+                        if(book.alreadyRead) {
+                            italicTag.appendChild(element);
+                            liTag.appendChild(italicTag);
+                            listHandle.appendChild(liTag);
+                            // var liTag = document.createElement('li');
+                            // liTag.appendChild(author);
+                            // console.log(liTag);
+                            // listHandle.appendChild(liTag);
+
+                            
+                        }
+                        else{
+                            liTag.appendChild(element);
+                            listHandle.appendChild(liTag);
+                            // //liTag.appendChild(author);
+                            // appHandle.appendChild(liTag);
+                        }
+                    })
+                        
+
+            </script>
+    </body>
+</html>
